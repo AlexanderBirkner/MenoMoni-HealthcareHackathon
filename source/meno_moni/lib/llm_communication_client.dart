@@ -8,7 +8,7 @@ import 'package:meno_moni/profile.dart';
 
 class LlmCommunicationClient {
   final String url = 'https://integrate.api.nvidia.com/v1/chat/completions';
-  final String apiKey = 'ADD YOUR NVIDIA API KEY';
+  final String apiKey = 'ADD YOUR NVIDIA API KEY!';
   final String message;
 
   LlmCommunicationClient(

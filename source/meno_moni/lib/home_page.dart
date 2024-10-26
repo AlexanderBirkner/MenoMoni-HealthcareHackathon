@@ -92,6 +92,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     int age = _calculateAge(widget.profile.birthday);
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: _isLoading ? null : _sendMessage,
+              child: _isLoading
+                  ? const CircularProgressIndicator()
+                  : const Icon(Icons.send, color: Colors.deepPurple,),),
       appBar: AppBar(title: const Text("Welcome")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -176,29 +180,16 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 4),
             TextField(
               controller: _messageController,
               decoration: const InputDecoration(
-                labelText: "Enter your message",
+                labelText: "Talk to Moni",
                 border: OutlineInputBorder(),
               ),
               maxLines: 3,
             ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: _isLoading ? null : _sendMessage,
-              child: _isLoading
-                  ? const CircularProgressIndicator()
-                  : const Text("Send"),
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-              ),
-            ),
+
             const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(

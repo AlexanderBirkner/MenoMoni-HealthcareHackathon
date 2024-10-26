@@ -17,7 +17,8 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   final TextEditingController _nameController = TextEditingController();
   DateTime? _selectedDate;
-  List<String> symptoms = ["Headache", "Fever", "Cough", "Fatigue"];
+  List<String> symptoms = ["Hot Flushes", "Night Sweats", "Breast Tenderness", "Mood Swings"
+  , "Sleep Disturbances", "Anxiety", "Increased Stress Level"];
   List<String> selectedSymptoms = [];
 
   void _pickDate() async {
